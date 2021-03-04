@@ -1,0 +1,22 @@
+<section class="loginSection">
+    <form fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="10px"
+    [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- email id -->
+        <mat-form-field>
+            <input type="email" matInput name="login_email" id="" placeholder="Email Id" formControlName="email">
+            <mat-error>Email cannot be blank</mat-error>
+        </mat-form-field>
+        <!-- password -->
+        <mat-form-field hintLabel="Input min of 6 characters">
+            <input type="password" matInput id="" placeholder="Password"
+            formControlName="password">
+            <!-- <button mat-icon-button matSuffix (click)="hide = !hide" 
+            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide"></button> -->
+            <!-- <mat-hint>Input min of 6 characters</mat-hint> -->
+            <mat-error>recommended a strong password</mat-error>
+            <!-- <mat-error align="end">{{ pwInput.value?.length }} /6</mat-error> -->
+        </mat-form-field>
+            <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+
+</section>
