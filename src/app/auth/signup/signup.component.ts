@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { dateInputsHaveChanged } from '@angular/material/datepicker/datepicker-input-base';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-signup',
@@ -9,16 +11,19 @@ import { dateInputsHaveChanged } from '@angular/material/datepicker/datepicker-i
 })
 export class SignupComponent implements OnInit {
 
-  hide:boolean = true;
+  hide = true;
   maxDate: Date = new Date();
-  constructor() { }
+  constructor( private authService: AuthService) {  }
 
   ngOnInit(): void {
-    this.maxDate.setFullYear(this.maxDate.getFullYear()-18);
+    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
   }
 
   // tslint:disable-next-line: typedef
   onSubmit(form: NgForm){
-    console.log(form.value);
+    this.authService.registerUser({
+      email: form.value.email,
+      password: form.value.password
+    });
   }
 }
