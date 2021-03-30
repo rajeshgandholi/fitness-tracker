@@ -8,7 +8,8 @@ import { User } from './user.model';
 @Injectable()
 export class AuthService {
     authChange = new Subject<boolean>();
-    private user = {} as User | null;
+    // private user = {} as User | false;
+    private user: User;
     // private user = <User>{};
     // private user: User = {
     //     email: '',
@@ -48,7 +49,8 @@ export class AuthService {
 
     // tslint:disable-next-line: typedef
     isAuth() {
-        return (this.user != null);
+        return this.user != null;
+        // return (false);
     }
 
     private successfully(){
