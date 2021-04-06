@@ -16,7 +16,8 @@
             <mat-error>recommended a strong password</mat-error>
             <!-- <mat-error align="end">{{ pwInput.value?.length }} /6</mat-error> -->
         </mat-form-field>
-            <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+            <button *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
     </form>
 
 </section>
