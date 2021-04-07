@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { SharedModule } from '../shared/shared.module';
 import { CurrentTrainingComponent } from './current-training/current-training.component';
-import { stopTrainingComponent } from './current-training/stop-training.component';
+import { StopTrainingComponent } from './current-training/stop-training.component';
 import { NewTrainingComponent } from './new-training/new-training.component';
 import { PastTrainingsComponent } from './past-trainings/past-trainings.component';
+import { TrainingRouterModule } from './training-routing.module';
 import { TrainingComponent } from './training.component';
 
 
@@ -15,11 +15,11 @@ import { TrainingComponent } from './training.component';
         CurrentTrainingComponent,
         NewTrainingComponent,
         PastTrainingsComponent,
-        stopTrainingComponent],
+        StopTrainingComponent],
     imports: [MatProgressSpinnerModule,
         SharedModule,
-        AngularFirestoreModule],
+    TrainingRouterModule],
     exports: [],
-    entryComponents: [stopTrainingComponent]
+    entryComponents: [StopTrainingComponent]
 })
 export class TrainingModule{}
