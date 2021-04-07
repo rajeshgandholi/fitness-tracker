@@ -12,7 +12,7 @@ import { MaterialModule } from '../material.module';
     exports: [CommonModule,
         FormsModule,
         MaterialModule,
-        FlexLayoutModule,]
+        FlexLayoutModule]
 })
 export class SharedModule{
 }

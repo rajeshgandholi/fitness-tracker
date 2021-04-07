@@ -28,6 +28,7 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit, OnDestroy 
       // console.log('🚀 ~ file: past-trainings.component.ts ~ line 28 ~ PastTrainingsComponent ~ ngOnInit ~ exercises', exercises);
     });
     this.trainingService.fetchCompletedOrCancelledExercises();
+    // console.log(this.dataSource.data);
   }
 
   ngAfterViewInit(): void{
@@ -36,7 +37,11 @@ export class PastTrainingsComponent implements OnInit, AfterViewInit, OnDestroy 
   }
 
   doFilter(filterValue: string): void{
+    // console.log(filterValue);
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    // tslint:disable-next-line: no-unused-expression
+    // console.log(this.dataSource.data.find( value => {value.name; }, 'burpees'));
+
   }
 
   ngOnDestroy(): void{

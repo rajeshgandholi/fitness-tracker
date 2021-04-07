@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 export class SidenavListComponent implements OnInit, OnDestroy{
   isAuth = false;
   @Output() closeSidenav = new EventEmitter<void>();
-  authSubscription: Subscription;
+  authSubscription!: Subscription;
 
   constructor(private authService: AuthService) { }
 

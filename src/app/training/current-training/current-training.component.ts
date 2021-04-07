@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TrainingService } from '../training.service';
-import { stopTrainingComponent } from './stop-training.component';
+import { StopTrainingComponent } from './stop-training.component';
 
 @Component({
   selector: 'app-current-training',
@@ -35,7 +35,7 @@ export class CurrentTrainingComponent implements OnInit {
   // tslint:disable-next-line: typedef
   onStop(){
     clearInterval(this.timer);
-    const dialogRef = this.dialog.open(stopTrainingComponent, {data: {progress: this.progress}});
+    const dialogRef = this.dialog.open(StopTrainingComponent, {data: {progress: this.progress}});
 
     dialogRef.afterClosed().subscribe ( result => {
       if (result)
